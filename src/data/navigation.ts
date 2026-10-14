@@ -18,10 +18,21 @@ export const COMPANY_INFO = {
   phone: "(917) 776-3603",
   phoneRaw: "9177763603",
   phoneTel: "tel:+19177763603",
+  email: "edapples1998@gmail.com",
+  emailMailto: "mailto:edapples1998@gmail.com",
+  address: "147 W 35th St, Suite 802, New York, NY 10001",
+  addressShort: "147 W 35th St, New York, NY",
   emergencyAvailability: "24/7 Available",
   emergencyBadge: "No Extra Charges for Emergency Services",
   rating: "4.9",
   reviewCount: "520+ Reviews",
+  socialLinks: {
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+    x: "https://x.com",
+    linkedin: "https://linkedin.com",
+    youtube: "https://youtube.com",
+  },
 };
 
 export const NAVIGATION_DATA: NavCategory[] = [
