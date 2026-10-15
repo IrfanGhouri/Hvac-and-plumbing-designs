@@ -21,6 +21,8 @@ import ServicesStyle2 from "@/components/services/ServicesStyle2";
 import ServicesStyle3 from "@/components/services/ServicesStyle3";
 import ServicesStyle4 from "@/components/services/ServicesStyle4";
 
+import HowItWorksStyle1 from "@/components/common/HowItWorksStyle1";
+
 import AboutWhyStyle1 from "@/components/about/AboutWhyStyle1";
 import AboutWhyStyle2 from "@/components/about/AboutWhyStyle2";
 import AboutWhyStyle3 from "@/components/about/AboutWhyStyle3";
@@ -63,6 +65,7 @@ export default function HomePage() {
           <>
             <HeroLiquidSwap />
             <ServicesStyle1 />
+            <HowItWorksStyle1 />
             <AboutWhyStyle1 />
             <Testimonials1Marquee />
             <FAQStyle1 />

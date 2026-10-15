@@ -3,6 +3,7 @@ import HeaderStyle1 from "@/components/headers/HeaderStyle1";
 import HeroLiquidSwap from "@/components/heroes/HeroLiquidSwap";
 import Testimonials1Marquee from "@/components/testimonials/Testimonials1Marquee";
 import ServicesStyle1 from "@/components/services/ServicesStyle1";
+import HowItWorksStyle1 from "@/components/common/HowItWorksStyle1";
 import AboutWhyStyle1 from "@/components/about/AboutWhyStyle1";
 import FAQStyle1 from "@/components/faq/FAQStyle1";
 import CTAStyle1 from "@/components/cta/CTAStyle1";
@@ -20,6 +21,7 @@ export default function Home1Page() {
       <main className="flex-1">
         <HeroLiquidSwap />
         <ServicesStyle1 />
+        <HowItWorksStyle1 />
         <AboutWhyStyle1 />
         <Testimonials1Marquee />
         <FAQStyle1 />
