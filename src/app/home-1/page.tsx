@@ -15,13 +15,13 @@ export const metadata = {
 
 export default function Home1Page() {
   return (
-    <div className="min-h-screen bg-[#06101E] text-white flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       <HeaderStyle1 />
       <main className="flex-1">
         <HeroLiquidSwap />
-        <Testimonials1Marquee />
         <ServicesStyle1 />
         <AboutWhyStyle1 />
+        <Testimonials1Marquee />
         <FAQStyle1 />
         <CTAStyle1 />
       </main>

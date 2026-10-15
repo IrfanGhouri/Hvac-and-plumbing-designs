@@ -1,145 +1,105 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import {
-  Phone,
-  Calendar,
-  ShieldCheck,
-  Clock,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  Wrench,
-  Flame,
-  Snowflake,
-  Droplet,
-} from "lucide-react";
+import { Phone } from "lucide-react";
 import LiquidSwap from "@/components/ui/LiquidSwap";
 import { COMPANY_INFO } from "@/data/navigation";
 
-// Curated high-res HVAC, plumbing and luxury climate images
+// Authentic, verified high-resolution HVAC and plumbing imagery
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80", // Modern luxury living room climate
-  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80", // Luxury bathroom & plumbing
-  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80", // High efficiency AC & heat pump
-  "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80", // Warm cozy heating interior
-];
-
-const HERO_CAPTIONS = [
-  {
-    tag: "High-Efficiency Cooling",
-    title: "Whisper-Quiet AC Inverter Systems",
-    description: "Multi-zone climate control engineered for maximum comfort and up to 40% energy reduction.",
-  },
-  {
-    tag: "Master Plumbing",
-    title: "Bespoke Piping & Hot Water Solutions",
-    description: "Tankless water heaters, non-invasive leak repairs, and luxury fixtures installed by licensed masters.",
-  },
-  {
-    tag: "24/7 Rapid Dispatch",
-    title: "Same-Day Emergency Heat & AC Repair",
-    description: "Zero overtime fees for night, weekend, or holiday emergencies. Fully stocked fleet ready.",
-  },
-  {
-    tag: "Clean Indoor Air",
-    title: "Next-Gen Filtration & Smart Thermostats",
-    description: "Hospital-grade HEPA filtration and whole-home humidity balance for cleaner, healthier living.",
-  },
+  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80", // High efficiency AC & Heat Pump
+  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80", // Master Plumbing Fixtures
+  "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80", // Clean Heating & Climate
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80", // Modern Residential Comfort
 ];
 
 export default function HeroLiquidSwap() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [, setActiveSlide] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0B1E36] via-[#081526] to-[#0B1E36] text-white py-14 sm:py-20 lg:py-24 border-b border-slate-800">
-      {/* Background subtle radial glow */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative w-full min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] bg-[#071322] text-white overflow-hidden flex flex-col justify-center">
+      {/* Background subtle atmospheric gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#071322] via-[#0A192F] to-[#040A14] pointer-events-none" />
 
-      {/* Ultra-wide container */}
-      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          {/* Left Column: Brand Information & CTAs */}
-          <div className="lg:col-span-5 space-y-6">
-            {/* Live Status Badge */}
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>24/7 Emergency Dispatch Active</span>
-            </div>
+      {/* Desktop (lg+): Full Height Edge-to-Edge Three.js Liquid Ripple Canvas on the Right */}
+      <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-[48%] xl:w-[46%] 2xl:w-[44%] h-full z-10 pointer-events-auto">
+        {/* Full Height Canvas with gentle left edge color fade */}
+        <div className="w-full h-full relative overflow-hidden">
+          <LiquidSwap
+            images={HERO_IMAGES}
+            transitionDuration={2.0}
+            glassRefractionStrength={0.32}
+            glassChromaticAberration={0.03}
+            glassBubbleClarity={0.92}
+            glassEdgeGlow={1.2}
+            glassLiquidFlow={1.0}
+            startAtCursor={true}
+            autoCycle={true}
+            autoCycleDelay={5500}
+            showControls={true}
+            showDots={true}
+            showCaptions={false}
+            onSwap={(index) => setActiveSlide(index)}
+            className="w-full h-full object-cover"
+          />
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-black font-montserrat tracking-tight leading-[1.1]">
-              Mastery In <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
-                Air Conditioning, Heating
-              </span>{" "}
-              &amp; Plumbing.
-            </h1>
+          {/* Smooth narrow gradient dissolve on the left 80px of the canvas */}
+          <div className="absolute inset-y-0 left-0 w-24 pointer-events-none z-10 bg-gradient-to-r from-[#071322] via-[#071322]/70 to-transparent" />
+        </div>
 
-            {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 font-poppins leading-relaxed">
-              Available 24 hours a day with upfront flat-rate pricing. We never charge extra for nights, weekends, or emergency calls across New York.
-            </p>
+        {/* 
+            Narrow Soft Blur Seam (Decreased width, feather-faded on BOTH left and right ends).
+            Using radial/linear mask so the blur fades into 0 opacity on both edges - ZERO sharp boundaries.
+        */}
+        <div className="absolute inset-y-0 -left-12 w-24 pointer-events-none z-20 backdrop-blur-sm [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_40%,black_60%,transparent_100%)] [mask-image:linear-gradient(to_right,transparent_0%,black_40%,black_60%,transparent_100%)]" />
+      </div>
 
-            {/* Reassurance Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span className="text-xs font-bold text-slate-200">24/7 Available</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <ShieldCheck className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span className="text-xs font-bold text-slate-200">No Overtime Fees</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 p-2.5 rounded-xl col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                <span className="text-xs font-bold text-slate-200">Upfront Rates</span>
-              </div>
-            </div>
+      {/* Main Content: Left Column aligned to Header Container Width */}
+      <div className="max-w-[1720px] mx-auto w-full px-4 sm:px-6 lg:px-12 relative z-20 py-12 lg:py-0">
+        <div className="lg:w-[56%] xl:w-[58%] 2xl:w-[60%] flex flex-col justify-center space-y-6">
+          {/* Clear, Punchy Human Headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-montserrat tracking-tight text-white leading-[1.06] max-w-3xl">
+            Fast Heating, Cooling <br />
+            <span className="text-amber-400">&amp; Master Plumbing.</span>
+          </h1>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <a
-                href={COMPANY_INFO.phoneTel}
-                className="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-black px-7 py-4 rounded-xl text-sm sm:text-base transition-all font-montserrat shadow-lg hover:shadow-amber-500/20"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Call {COMPANY_INFO.phone}</span>
-              </a>
+          {/* Short, Honest Value Proposition */}
+          <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-poppins leading-relaxed max-w-2xl">
+            Same-day service across Manhattan, Brooklyn, and Queens. Upfront flat rates with zero overtime fees — day or night.
+          </p>
 
-              <a
-                href="#appointment"
-                className="inline-flex items-center gap-2 bg-[#FF6B00] hover:bg-[#e05e00] active:scale-95 text-white font-bold px-7 py-4 rounded-xl text-sm sm:text-base transition-all font-montserrat shadow-md"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book an Appointment</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Custom Liquid Glass Ball Swap Frame */}
-          <div className="lg:col-span-7">
-            <div className="relative w-full h-[440px] sm:h-[540px] xl:h-[620px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 group">
-              <LiquidSwap
-                images={HERO_IMAGES}
-                captions={HERO_CAPTIONS}
-                transitionDuration={2.2}
-                glassRefractionStrength={0.36}
-                glassChromaticAberration={0.04}
-                glassBubbleClarity={0.88}
-                glassEdgeGlow={1.4}
-                glassLiquidFlow={1.1}
-                startAtCursor={true}
-                autoCycle={true}
-                autoCycleDelay={5500}
-                onSwap={(index) => setActiveSlide(index)}
-                className="w-full h-full"
-              />
-            </div>
+          {/* Single Action Button: Call Us Now (font-semibold lighter text) */}
+          <div className="pt-2">
+            <a
+              href={COMPANY_INFO.phoneTel}
+              className="inline-flex items-center justify-center gap-2.5 bg-amber-400 hover:bg-amber-300 active:scale-95 text-slate-950 font-semibold px-8 py-3.5 rounded-xl text-sm sm:text-base font-montserrat shadow-md hover:shadow-amber-400/20 transition-all cursor-pointer"
+            >
+              <Phone className="w-4 h-4 fill-current flex-shrink-0" />
+              <span>Call Us Now</span>
+            </a>
           </div>
         </div>
+      </div>
+
+      {/* Mobile view (< lg): Three.js Canvas sits below text */}
+      <div className="lg:hidden w-full h-[420px] sm:h-[500px] relative overflow-hidden mt-6">
+        <LiquidSwap
+          images={HERO_IMAGES}
+          transitionDuration={2.0}
+          glassRefractionStrength={0.32}
+          glassChromaticAberration={0.03}
+          glassBubbleClarity={0.92}
+          glassEdgeGlow={1.2}
+          glassLiquidFlow={1.0}
+          startAtCursor={true}
+          autoCycle={true}
+          autoCycleDelay={5500}
+          showControls={true}
+          showDots={true}
+          showCaptions={false}
+          onSwap={(index) => setActiveSlide(index)}
+          className="w-full h-full object-cover"
+        />
       </div>
     </section>
   );

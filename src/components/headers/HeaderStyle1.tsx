@@ -212,20 +212,15 @@ export default function HeaderStyle1() {
                 </button>
 
                 {isOpen && (
-                  <div className="absolute top-full left-0 pt-2 w-[520px] animate-in fade-in duration-150 z-50">
-                    <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-3.5 grid grid-cols-2 gap-2">
+                  <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
+                    <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-1.5 divide-y divide-slate-100/80">
                       {cat.items.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-slate-200"
+                          className="block px-4 py-2.5 text-sm font-semibold text-slate-800 hover:text-amber-600 hover:bg-slate-50 transition-colors"
                         >
-                          <div className="p-2 rounded-lg bg-slate-100 group-hover/item:bg-amber-100/70 transition-colors flex-shrink-0">
-                            {getServiceIcon(item.icon)}
-                          </div>
-                          <span className="text-sm sm:text-[15px] font-bold text-slate-800 group-hover/item:text-amber-600 transition-colors leading-snug">
-                            {item.name}
-                          </span>
+                          {item.name}
                         </Link>
                       ))}
                     </div>
@@ -329,16 +324,15 @@ export default function HeaderStyle1() {
                       </button>
 
                       {isOpen && (
-                        <div className="p-2.5 bg-white divide-y divide-slate-100">
+                        <div className="py-1 bg-white divide-y divide-slate-100">
                           {cat.items.map((sub) => (
                             <Link
                               key={sub.name}
                               href={sub.href}
                               onClick={closeMenu}
-                              className="flex items-center gap-3 py-3 px-2.5 hover:bg-slate-50 text-sm font-semibold text-slate-800"
+                              className="block py-2.5 px-4 text-sm font-medium text-slate-700 hover:text-amber-600 hover:bg-slate-50 transition-colors"
                             >
-                              {getServiceIcon(sub.icon)}
-                              <span>{sub.name}</span>
+                              {sub.name}
                             </Link>
                           ))}
                         </div>

@@ -62,9 +62,9 @@ export default function HomePage() {
         {selectedStyle === 1 && (
           <>
             <HeroLiquidSwap />
-            <Testimonials1Marquee />
             <ServicesStyle1 />
             <AboutWhyStyle1 />
+            <Testimonials1Marquee />
             <FAQStyle1 />
             <CTAStyle1 />
           </>
